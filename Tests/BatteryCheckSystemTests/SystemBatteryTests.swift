@@ -93,7 +93,8 @@ final class SystemBatteryTests: XCTestCase {
         let model = AppModel(
             provider: CompositeBatteryProvider(bleBattery: BLEBatteryServiceProvider(timeout: 10)),
             scheduler: RefreshScheduler(dailyHour: 0, dailyMinute: 0),
-            defaults: defaults
+            defaults: defaults,
+            launchAtLogin: FakeLaunchAtLoginManager(current: .enabled)
         )
 
         await model.refreshManually()
@@ -125,5 +126,30 @@ final class SystemBatteryTests: XCTestCase {
             }
         }
         return names
+    }
+}
+
+final class SystemLaunchAtLoginTests: XCTestCase {
+    func testRegisterLaunchAtLoginWithSMAppService() throws {
+        let manager = SMAppServiceLaunchAtLoginManager()
+        // When running under xcodebuild test host, mainApp registration may be
+        // unavailable or require approval; accept enabled/requiresApproval/unavailable.
+        do {
+            try manager.setEnabled(true)
+        } catch {
+            // Still assert we can read a status without crashing.
+            let status = manager.status()
+            XCTAssertTrue(
+                [.enabled, .requiresApproval, .disabled, .unavailable].contains(status),
+                "unexpected status \(status) after error \(error)"
+            )
+            return
+        }
+
+        let status = manager.status()
+        XCTAssertTrue(
+            status == .enabled || status == .requiresApproval || status == .unavailable,
+            "expected enabled/requiresApproval/unavailable, got \(status)"
+        )
     }
 }

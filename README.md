@@ -51,3 +51,8 @@ App 以非 App Sandbox 建置並宣告藍牙用途說明。電量來源依序為
 - `Sources/BatteryCheckCore`：排程、模型、IORegistry 電量讀取
 - `Sources/BatteryCheckApp`：選單列 UI（SwiftUI `MenuBarExtra`）
 - `Tests/`：單元與整合測試
+
+
+## 開機自動啟動
+
+Settings（設定）內可開關「開機自動啟動」。使用 macOS `SMAppService` 登錄登入項目；若狀態為需要核准，請到「系統設定 → 一般 → 登入項目」允許 BatteryCheck。

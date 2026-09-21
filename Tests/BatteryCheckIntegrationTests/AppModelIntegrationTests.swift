@@ -12,7 +12,8 @@ final class AppModelIntegrationTests: XCTestCase {
         let model = AppModel(
             provider: provider,
             scheduler: RefreshScheduler(dailyHour: 0, dailyMinute: 0),
-            defaults: defaults
+            defaults: defaults,
+            launchAtLogin: FakeLaunchAtLoginManager()
         )
 
         await model.refreshManually()
@@ -27,7 +28,7 @@ final class AppModelIntegrationTests: XCTestCase {
     func testEmptyProviderSetsFriendlyError() async {
         let provider = StaticBatteryProvider(devices: [])
         let defaults = UserDefaults(suiteName: "BatteryCheck.Integration.\(UUID().uuidString)")!
-        let model = AppModel(provider: provider, defaults: defaults)
+        let model = AppModel(provider: provider, defaults: defaults, launchAtLogin: FakeLaunchAtLoginManager())
         await model.refreshManually()
         XCTAssertTrue(model.devices.isEmpty)
         XCTAssertEqual(model.lastError, "找不到已連線的藍牙鍵盤／滑鼠")
@@ -57,3 +58,23 @@ final class AppModelIntegrationTests: XCTestCase {
     }
 }
 
+
+@MainActor
+final class LaunchAtLoginIntegrationTests: XCTestCase {
+    func testAppModelEnablesLaunchAtLoginThroughManager() {
+        let launch = FakeLaunchAtLoginManager(current: .disabled)
+        let defaults = UserDefaults(suiteName: "BatteryCheck.Launch.\(UUID().uuidString)")!
+        let model = AppModel(
+            provider: StaticBatteryProvider(devices: []),
+            defaults: defaults,
+            launchAtLogin: launch
+        )
+        // init auto-enables when disabled
+        XCTAssertEqual(launch.status(), .enabled)
+        XCTAssertEqual(model.launchAtLoginStatus, .enabled)
+
+        model.setLaunchAtLoginEnabled(false)
+        XCTAssertEqual(model.launchAtLoginStatus, .disabled)
+        XCTAssertEqual(launch.setEnabledCalls.last, false)
+    }
+}

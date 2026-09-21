@@ -97,3 +97,15 @@ final class BLEPeripheralGateTests: XCTestCase {
         XCTAssertEqual(BLEPeripheralGate.nextAction(state: .connecting), .skip)
     }
 }
+
+final class LaunchAtLoginManagerTests: XCTestCase {
+    func testFakeEnableAndDisable() throws {
+        let manager = FakeLaunchAtLoginManager(current: .disabled)
+        XCTAssertEqual(manager.status(), .disabled)
+        try manager.setEnabled(true)
+        XCTAssertEqual(manager.status(), .enabled)
+        try manager.setEnabled(false)
+        XCTAssertEqual(manager.status(), .disabled)
+        XCTAssertEqual(manager.setEnabledCalls, [true, false])
+    }
+}

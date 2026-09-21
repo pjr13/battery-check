@@ -9,10 +9,13 @@ final class AppModel: ObservableObject {
     @Published private(set) var lastError: String?
     @Published private(set) var nextRefresh: Date?
     @Published var isRefreshing = false
+    @Published var launchAtLoginStatus: LaunchAtLoginStatus = .disabled
+    @Published var launchAtLoginError: String?
 
     private let provider: BatteryProviding
     private let scheduler: RefreshScheduler
     private let defaults: UserDefaults
+    private let launchAtLogin: LaunchAtLoginManaging
     private let lastSuccessKey = "lastSuccessfulRefresh"
     private var timer: Timer?
     private var wakeObserver: NSObjectProtocol?
@@ -20,15 +23,43 @@ final class AppModel: ObservableObject {
     init(
         provider: BatteryProviding = CompositeBatteryProvider(),
         scheduler: RefreshScheduler = RefreshScheduler(),
-        defaults: UserDefaults = .standard
+        defaults: UserDefaults = .standard,
+        launchAtLogin: LaunchAtLoginManaging = SMAppServiceLaunchAtLoginManager()
     ) {
         self.provider = provider
         self.scheduler = scheduler
         self.defaults = defaults
+        self.launchAtLogin = launchAtLogin
         self.lastSuccess = defaults.object(forKey: lastSuccessKey) as? Date
+        self.launchAtLoginStatus = launchAtLogin.status()
         scheduleNext()
         observeWake()
         Task { await refreshIfDue(force: false) }
+        // User requested launch-at-login; enable on startup if currently off.
+        enableLaunchAtLoginIfNeeded()
+    }
+
+    private func enableLaunchAtLoginIfNeeded() {
+        let status = launchAtLogin.status()
+        guard status == .disabled else {
+            launchAtLoginStatus = status
+            return
+        }
+        setLaunchAtLoginEnabled(true)
+    }
+
+    func refreshLaunchAtLoginStatus() {
+        launchAtLoginStatus = launchAtLogin.status()
+    }
+
+    func setLaunchAtLoginEnabled(_ enabled: Bool) {
+        do {
+            try launchAtLogin.setEnabled(enabled)
+            launchAtLoginError = nil
+        } catch {
+            launchAtLoginError = error.localizedDescription
+        }
+        refreshLaunchAtLoginStatus()
     }
 
     deinit {
