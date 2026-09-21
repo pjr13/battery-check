@@ -59,7 +59,7 @@ final class AppModel: ObservableObject {
         isRefreshing = true
         defer { isRefreshing = false }
         do {
-            let fetched = try provider.fetchDevices()
+            let fetched = try await provider.fetchDevices()
             devices = fetched
             lastSuccess = Date()
             defaults.set(lastSuccess, forKey: lastSuccessKey)

@@ -33,12 +33,27 @@ final class AppModelIntegrationTests: XCTestCase {
         XCTAssertEqual(model.lastError, "找不到已連線的藍牙鍵盤／滑鼠")
     }
 
-    func testCompositeProviderFindsConnectedKeyboard() throws {
-        let devices = try CompositeBatteryProvider().fetchDevices()
-        // On this machine a Keychron keyboard is typically connected; at minimum call should not throw.
+    func testCompositeProviderFindsConnectedKeyboard() async throws {
+        let devices = try await CompositeBatteryProvider(
+            bleBattery: StaticBLEBatteryServiceProvider(levels: [:])
+        ).fetchDevices()
         XCTAssertNotNil(devices)
         if let keyboard = devices.first(where: { $0.kind == .keyboard }) {
             XCTAssertFalse(keyboard.name.isEmpty)
         }
     }
+
+    func testCompositeMergesBLEBatteryLevels() async throws {
+        let devices = try await CompositeBatteryProvider(
+            bleBattery: StaticBLEBatteryServiceProvider(levels: [
+                "Keychron K2 HE": 77,
+                "MX Master 4": 55
+            ])
+        ).fetchDevices()
+        let keyboard = devices.first { $0.kind == .keyboard }
+        let mouse = devices.first { $0.kind == .mouse }
+        XCTAssertEqual(keyboard?.percentage, 77)
+        XCTAssertEqual(mouse?.percentage, 55)
+    }
 }
+

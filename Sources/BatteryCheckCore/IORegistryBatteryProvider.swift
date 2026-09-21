@@ -4,7 +4,7 @@ import IOKit
 public struct IORegistryBatteryProvider: BatteryProviding {
     public init() {}
 
-    public func fetchDevices() throws -> [BatteryDevice] {
+    public func fetchDevices() async throws -> [BatteryDevice] {
         try Self.readRawDevices().compactMap { raw -> BatteryDevice? in
             let lower = raw.name.lowercased()
             if lower.contains("internal keyboard") || lower.contains("built-in") {

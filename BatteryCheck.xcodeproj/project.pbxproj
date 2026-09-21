@@ -18,6 +18,7 @@
 		BE09CE4AA3FD0AF2FC14E9CF /* RefreshSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */; };
 		C3995DAEB0A675920D3EDC79 /* BatteryCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07E5C850878BD8132BC94 /* BatteryCheckApp.swift */; };
 		F852F3F1F52DA83BFCE26EC0 /* BatteryDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A71F963352C093C0B15894 /* BatteryDevice.swift */; };
+		FADD3D4BBD72792966E2D223 /* BLEBatteryServiceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B560DE25BF6B859A0BE139F /* BLEBatteryServiceProvider.swift */; };
 		FF9CEAC80EE5A0B0A2FBD687 /* AppModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */; };
 /* End PBXBuildFile section */
 
@@ -42,6 +43,7 @@
 		0B128C10B5A3EC176CE75327 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
 		11B07E5C850878BD8132BC94 /* BatteryCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryCheckApp.swift; sourceTree = "<group>"; };
 		265353B0BA53D416E1687658 /* BatteryCheckCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		3B560DE25BF6B859A0BE139F /* BLEBatteryServiceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BLEBatteryServiceProvider.swift; sourceTree = "<group>"; };
 		70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelIntegrationTests.swift; sourceTree = "<group>"; };
 		8A68E73F57CEC43BFDA103E1 /* BatteryCheckIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		8CD40D237A08E09DCEB2747A /* BluetoothConnectedDeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectedDeviceProvider.swift; sourceTree = "<group>"; };
@@ -71,6 +73,7 @@
 			children = (
 				B6A71F963352C093C0B15894 /* BatteryDevice.swift */,
 				ED1D2BACEF87B206A42EF306 /* BatteryProviding.swift */,
+				3B560DE25BF6B859A0BE139F /* BLEBatteryServiceProvider.swift */,
 				8CD40D237A08E09DCEB2747A /* BluetoothConnectedDeviceProvider.swift */,
 				D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */,
 				F1F3EF14C409504723978716 /* RefreshScheduler.swift */,
@@ -228,6 +231,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				6C55DF3063053C50DF3A18DC /* AppModel.swift in Sources */,
+				FADD3D4BBD72792966E2D223 /* BLEBatteryServiceProvider.swift in Sources */,
 				C3995DAEB0A675920D3EDC79 /* BatteryCheckApp.swift in Sources */,
 				F852F3F1F52DA83BFCE26EC0 /* BatteryDevice.swift in Sources */,
 				3116458456484754CE334858 /* BatteryProviding.swift in Sources */,

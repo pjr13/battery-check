@@ -4,7 +4,7 @@ import Foundation
 public struct BluetoothConnectedDeviceProvider: BatteryProviding {
     public init() {}
 
-    public func fetchDevices() throws -> [BatteryDevice] {
+    public func fetchDevices() async throws -> [BatteryDevice] {
         let process = Process()
         process.executableURL = URL(fileURLWithPath: "/usr/sbin/system_profiler")
         process.arguments = ["SPBluetoothDataType", "-json"]

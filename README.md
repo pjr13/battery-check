@@ -43,7 +43,7 @@ xcodebuild -scheme BatteryCheck -destination 'platform=macOS' test
 
 ## 權限說明
 
-App 以非 App Sandbox 建置並宣告藍牙用途說明，以便讀取 IORegistry 中 HID 裝置的 `BatteryPercent`。若系統提示藍牙權限，請允許。
+App 以非 App Sandbox 建置並宣告藍牙用途說明。電量來源依序為：IORegistry `BatteryPercent`、已連線藍牙裝置清單，以及 BLE 標準 Battery Service（0x180F）。若系統提示藍牙權限，請允許。
 
 ## 專案結構
 
