@@ -1,3 +1,4 @@
+import CoreBluetooth
 import XCTest
 @testable import BatteryCheck
 
@@ -79,5 +80,20 @@ final class MenuBarFormatterTests: XCTestCase {
     func testKindInferenceIncludesKeychron() {
         XCTAssertEqual(DeviceKind.infer(fromName: "Keychron K2 HE"), .keyboard)
         XCTAssertEqual(DeviceKind.infer(fromName: "MX Master 4", minorType: "Mouse"), .mouse)
+    }
+}
+
+final class BLEPeripheralGateTests: XCTestCase {
+    func testConnectedDiscoversServices() {
+        XCTAssertEqual(BLEPeripheralGate.nextAction(state: .connected), .discoverServices)
+    }
+
+    func testDisconnectedConnectsFirst() {
+        XCTAssertEqual(BLEPeripheralGate.nextAction(state: .disconnected), .connect)
+        XCTAssertEqual(BLEPeripheralGate.nextAction(state: .disconnecting), .connect)
+    }
+
+    func testConnectingSkipsCommands() {
+        XCTAssertEqual(BLEPeripheralGate.nextAction(state: .connecting), .skip)
     }
 }
