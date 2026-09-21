@@ -1,3 +1,4 @@
+import AppKit
 import SwiftUI
 
 struct MenuContentView: View {
@@ -9,15 +10,21 @@ struct MenuContentView: View {
         }
 
         if model.devices.isEmpty {
-            Text("尚無裝置電量資料")
+            Text("尚無已連線的藍牙鍵盤／滑鼠")
         } else {
             ForEach(model.devices) { device in
                 HStack {
-                    Image(systemName: device.kind.symbolName)
-                    Text(device.name)
-                    Spacer()
-                    Text("\(device.percentage)%")
+                    Text(device.kind.emoji)
+                    VStack(alignment: .leading, spacing: 2) {
+                        Text(device.name)
+                        Text(device.kind.displayNameZH)
+                            .font(.caption)
+                            .foregroundStyle(.secondary)
+                    }
+                    Spacer(minLength: 12)
+                    Text(device.percentageText)
                         .monospacedDigit()
+                        .foregroundStyle(device.percentage == nil ? .secondary : .primary)
                 }
             }
         }

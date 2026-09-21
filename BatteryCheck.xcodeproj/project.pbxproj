@@ -12,6 +12,7 @@
 		5C4777B4123D0DBF66B940A0 /* MenuBarLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF81F007BDFD77837F131DD /* MenuBarLabelView.swift */; };
 		6C55DF3063053C50DF3A18DC /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B128C10B5A3EC176CE75327 /* AppModel.swift */; };
 		6CEA3E818B772F8E670112F0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD751BA42FE71EE35E81A09B /* SettingsView.swift */; };
+		6D68496159E6334F96383903 /* BluetoothConnectedDeviceProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = 8CD40D237A08E09DCEB2747A /* BluetoothConnectedDeviceProvider.swift */; };
 		7E4CFD2923129AB079B07027 /* RefreshScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F3EF14C409504723978716 /* RefreshScheduler.swift */; };
 		9811EA702EF8685F84224321 /* IORegistryBatteryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */; };
 		BE09CE4AA3FD0AF2FC14E9CF /* RefreshSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */; };
@@ -43,6 +44,7 @@
 		265353B0BA53D416E1687658 /* BatteryCheckCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelIntegrationTests.swift; sourceTree = "<group>"; };
 		8A68E73F57CEC43BFDA103E1 /* BatteryCheckIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		8CD40D237A08E09DCEB2747A /* BluetoothConnectedDeviceProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BluetoothConnectedDeviceProvider.swift; sourceTree = "<group>"; };
 		B6A71F963352C093C0B15894 /* BatteryDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDevice.swift; sourceTree = "<group>"; };
 		B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshSchedulerTests.swift; sourceTree = "<group>"; };
 		B98528F23BB46E1094D27420 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
@@ -69,6 +71,7 @@
 			children = (
 				B6A71F963352C093C0B15894 /* BatteryDevice.swift */,
 				ED1D2BACEF87B206A42EF306 /* BatteryProviding.swift */,
+				8CD40D237A08E09DCEB2747A /* BluetoothConnectedDeviceProvider.swift */,
 				D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */,
 				F1F3EF14C409504723978716 /* RefreshScheduler.swift */,
 			);
@@ -228,6 +231,7 @@
 				C3995DAEB0A675920D3EDC79 /* BatteryCheckApp.swift in Sources */,
 				F852F3F1F52DA83BFCE26EC0 /* BatteryDevice.swift in Sources */,
 				3116458456484754CE334858 /* BatteryProviding.swift in Sources */,
+				6D68496159E6334F96383903 /* BluetoothConnectedDeviceProvider.swift in Sources */,
 				9811EA702EF8685F84224321 /* IORegistryBatteryProvider.swift in Sources */,
 				5C4777B4123D0DBF66B940A0 /* MenuBarLabelView.swift in Sources */,
 				1C1C04D379D3ACB61C93CA55 /* MenuContentView.swift in Sources */,

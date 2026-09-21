@@ -18,7 +18,7 @@ final class AppModel: ObservableObject {
     private var wakeObserver: NSObjectProtocol?
 
     init(
-        provider: BatteryProviding = IORegistryBatteryProvider(),
+        provider: BatteryProviding = CompositeBatteryProvider(),
         scheduler: RefreshScheduler = RefreshScheduler(),
         defaults: UserDefaults = .standard
     ) {
@@ -63,7 +63,7 @@ final class AppModel: ObservableObject {
             devices = fetched
             lastSuccess = Date()
             defaults.set(lastSuccess, forKey: lastSuccessKey)
-            lastError = fetched.isEmpty ? "找不到可讀取電量的藍牙鍵盤／滑鼠" : nil
+            lastError = fetched.isEmpty ? "找不到已連線的藍牙鍵盤／滑鼠" : nil
         } catch {
             lastError = error.localizedDescription
         }

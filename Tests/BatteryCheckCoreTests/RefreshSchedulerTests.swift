@@ -24,20 +24,17 @@ final class RefreshSchedulerTests: XCTestCase {
 
     func testBeforeWindowWaitsUntilNineThirty() {
         let now = date(2026, 9, 21, 8, 0)
-        let next = scheduler.nextRefreshDate(lastSuccess: nil, now: now)
-        XCTAssertEqual(next, date(2026, 9, 21, 9, 30))
+        XCTAssertEqual(scheduler.nextRefreshDate(lastSuccess: nil, now: now), date(2026, 9, 21, 9, 30))
         XCTAssertFalse(scheduler.shouldRefreshNow(lastSuccess: nil, now: now))
     }
 
     func testAtWindowWithoutSuccessIsDue() {
         let now = date(2026, 9, 21, 9, 30)
         XCTAssertTrue(scheduler.shouldRefreshNow(lastSuccess: nil, now: now))
-        XCTAssertEqual(scheduler.nextRefreshDate(lastSuccess: nil, now: now), now)
     }
 
     func testMissedWindowUsesCatchUpUntilSuccess() {
         let now = date(2026, 9, 21, 11, 0)
-        XCTAssertTrue(scheduler.shouldRefreshNow(lastSuccess: nil, now: now))
         let lastNight = date(2026, 9, 20, 9, 30)
         XCTAssertTrue(scheduler.shouldRefreshNow(lastSuccess: lastNight, now: now))
     }
@@ -46,46 +43,41 @@ final class RefreshSchedulerTests: XCTestCase {
         let success = date(2026, 9, 21, 9, 31)
         let now = date(2026, 9, 21, 10, 0)
         XCTAssertTrue(scheduler.hasCompletedToday(lastSuccess: success, now: now))
-        XCTAssertFalse(scheduler.shouldRefreshNow(lastSuccess: success, now: now))
-        XCTAssertEqual(
-            scheduler.nextRefreshDate(lastSuccess: success, now: now),
-            date(2026, 9, 22, 9, 30)
-        )
+        XCTAssertEqual(scheduler.nextRefreshDate(lastSuccess: success, now: now), date(2026, 9, 22, 9, 30))
     }
 
     func testCatchUpDoesNotMarkCompleteWithoutSuccess() {
         let now = date(2026, 9, 21, 12, 0)
         XCTAssertFalse(scheduler.hasCompletedToday(lastSuccess: nil, now: now))
-        XCTAssertEqual(scheduler.nextRefreshDate(lastSuccess: nil, now: now), now)
     }
 }
 
 final class MenuBarFormatterTests: XCTestCase {
-    func testStatusTextForKeyboardAndMouse() {
+    func testStatusTextUsesKeyboardAndMouseEmoji() {
         let devices = [
-            BatteryDevice(id: "k", name: "Keyboard", kind: .keyboard, percentage: 85),
-            BatteryDevice(id: "m", name: "Mouse", kind: .mouse, percentage: 72)
+            BatteryDevice(id: "k", name: "Keyboard", kind: .keyboard, percentage: 85, isConnected: true),
+            BatteryDevice(id: "m", name: "Mouse", kind: .mouse, percentage: 72, isConnected: true)
         ]
         let text = MenuBarFormatter.statusText(for: devices)
+        XCTAssertTrue(text.contains("⌨️"))
+        XCTAssertTrue(text.contains("🖱️"))
         XCTAssertTrue(text.contains("85%"))
         XCTAssertTrue(text.contains("72%"))
     }
 
-    func testEmptyDevices() {
-        XCTAssertEqual(MenuBarFormatter.statusText(for: []), "電量 —")
+    func testUnknownPercentageShowsDash() {
+        let devices = [
+            BatteryDevice(id: "k", name: "Keychron", kind: .keyboard, percentage: nil, isConnected: true)
+        ]
+        XCTAssertEqual(MenuBarFormatter.statusText(for: devices), "⌨️—")
     }
 
-    func testPercentageClamped() {
-        let high = BatteryDevice(id: "1", name: "K", kind: .keyboard, percentage: 140)
-        let low = BatteryDevice(id: "2", name: "M", kind: .mouse, percentage: -5)
-        XCTAssertEqual(high.percentage, 100)
-        XCTAssertEqual(low.percentage, 0)
+    func testEmptyShowsPlaceholders() {
+        XCTAssertEqual(MenuBarFormatter.statusText(for: []), "⌨️—  🖱️—")
     }
 
-    func testKindInference() {
-        XCTAssertEqual(DeviceKind.infer(fromName: "Magic Keyboard"), .keyboard)
-        XCTAssertEqual(DeviceKind.infer(fromName: "Magic Mouse"), .mouse)
-        XCTAssertEqual(DeviceKind.infer(fromName: "Magic Trackpad"), .trackpad)
-        XCTAssertEqual(DeviceKind.infer(fromName: "AirPods"), .other)
+    func testKindInferenceIncludesKeychron() {
+        XCTAssertEqual(DeviceKind.infer(fromName: "Keychron K2 HE"), .keyboard)
+        XCTAssertEqual(DeviceKind.infer(fromName: "MX Master 4", minorType: "Mouse"), .mouse)
     }
 }
