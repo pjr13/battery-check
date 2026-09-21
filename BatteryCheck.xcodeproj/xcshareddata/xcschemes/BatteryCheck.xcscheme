@@ -49,6 +49,20 @@
                ReferencedContainer = "container:BatteryCheck.xcodeproj">
             </BuildableReference>
          </BuildActionEntry>
+         <BuildActionEntry
+            buildForTesting = "YES"
+            buildForRunning = "NO"
+            buildForProfiling = "NO"
+            buildForArchiving = "NO"
+            buildForAnalyzing = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FE7C735B8F914F04B8C6565C"
+               BuildableName = "BatteryCheckSystemTests.xctest"
+               BlueprintName = "BatteryCheckSystemTests"
+               ReferencedContainer = "container:BatteryCheck.xcodeproj">
+            </BuildableReference>
+         </BuildActionEntry>
       </BuildActionEntries>
    </BuildAction>
    <TestAction
@@ -86,6 +100,17 @@
                BlueprintIdentifier = "6635722C9CB0EB6C6B3BF9C6"
                BuildableName = "BatteryCheckIntegrationTests.xctest"
                BlueprintName = "BatteryCheckIntegrationTests"
+               ReferencedContainer = "container:BatteryCheck.xcodeproj">
+            </BuildableReference>
+         </TestableReference>
+         <TestableReference
+            skipped = "NO"
+            parallelizable = "NO">
+            <BuildableReference
+               BuildableIdentifier = "primary"
+               BlueprintIdentifier = "FE7C735B8F914F04B8C6565C"
+               BuildableName = "BatteryCheckSystemTests.xctest"
+               BlueprintName = "BatteryCheckSystemTests"
                ReferencedContainer = "container:BatteryCheck.xcodeproj">
             </BuildableReference>
          </TestableReference>

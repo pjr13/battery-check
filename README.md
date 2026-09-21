@@ -38,8 +38,9 @@ xcodegen generate
 xcodebuild -scheme BatteryCheck -destination 'platform=macOS' test
 ```
 
-- **Unit tests**（`BatteryCheckCoreTests`）：排程邏輯、電量文字格式、裝置類型推論
-- **Integration tests**（`BatteryCheckIntegrationTests`）：以假資料驅動 `AppModel` 刷新流程；並對 IORegistry 讀取做不拋錯煙霧測試（不要求實際裝置）
+- **Unit tests**（`BatteryCheckCoreTests`）：排程邏輯、電量文字格式、裝置類型推論、BLE 連線狀態 gate
+- **Integration tests**（`BatteryCheckIntegrationTests`）：以假資料驅動 `AppModel`／Composite provider（不要求實際裝置）
+- **System tests**（`BatteryCheckSystemTests`）：對真實藍牙／IORegistry／BLE Battery Service 做實機驗證（需鍵盤／滑鼠已連線）
 
 ## 權限說明
 
