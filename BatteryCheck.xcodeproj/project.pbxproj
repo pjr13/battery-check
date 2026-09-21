@@ -1,0 +1,534 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 77;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		1C1C04D379D3ACB61C93CA55 /* MenuContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = B98528F23BB46E1094D27420 /* MenuContentView.swift */; };
+		3116458456484754CE334858 /* BatteryProviding.swift in Sources */ = {isa = PBXBuildFile; fileRef = ED1D2BACEF87B206A42EF306 /* BatteryProviding.swift */; };
+		5C4777B4123D0DBF66B940A0 /* MenuBarLabelView.swift in Sources */ = {isa = PBXBuildFile; fileRef = FAF81F007BDFD77837F131DD /* MenuBarLabelView.swift */; };
+		6C55DF3063053C50DF3A18DC /* AppModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 0B128C10B5A3EC176CE75327 /* AppModel.swift */; };
+		6CEA3E818B772F8E670112F0 /* SettingsView.swift in Sources */ = {isa = PBXBuildFile; fileRef = BD751BA42FE71EE35E81A09B /* SettingsView.swift */; };
+		7E4CFD2923129AB079B07027 /* RefreshScheduler.swift in Sources */ = {isa = PBXBuildFile; fileRef = F1F3EF14C409504723978716 /* RefreshScheduler.swift */; };
+		9811EA702EF8685F84224321 /* IORegistryBatteryProvider.swift in Sources */ = {isa = PBXBuildFile; fileRef = D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */; };
+		BE09CE4AA3FD0AF2FC14E9CF /* RefreshSchedulerTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */; };
+		C3995DAEB0A675920D3EDC79 /* BatteryCheckApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 11B07E5C850878BD8132BC94 /* BatteryCheckApp.swift */; };
+		F852F3F1F52DA83BFCE26EC0 /* BatteryDevice.swift in Sources */ = {isa = PBXBuildFile; fileRef = B6A71F963352C093C0B15894 /* BatteryDevice.swift */; };
+		FF9CEAC80EE5A0B0A2FBD687 /* AppModelIntegrationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		884C9EA2A6551B14769EC778 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AED629FFFC8948286A4E6112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4EF12684259BF5C45B429F2;
+			remoteInfo = BatteryCheck;
+		};
+		D613005000C5809B45F788AE /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = AED629FFFC8948286A4E6112 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = C4EF12684259BF5C45B429F2;
+			remoteInfo = BatteryCheck;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		0B128C10B5A3EC176CE75327 /* AppModel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModel.swift; sourceTree = "<group>"; };
+		11B07E5C850878BD8132BC94 /* BatteryCheckApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryCheckApp.swift; sourceTree = "<group>"; };
+		265353B0BA53D416E1687658 /* BatteryCheckCoreTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckCoreTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppModelIntegrationTests.swift; sourceTree = "<group>"; };
+		8A68E73F57CEC43BFDA103E1 /* BatteryCheckIntegrationTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = BatteryCheckIntegrationTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		B6A71F963352C093C0B15894 /* BatteryDevice.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryDevice.swift; sourceTree = "<group>"; };
+		B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshSchedulerTests.swift; sourceTree = "<group>"; };
+		B98528F23BB46E1094D27420 /* MenuContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuContentView.swift; sourceTree = "<group>"; };
+		BD751BA42FE71EE35E81A09B /* SettingsView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SettingsView.swift; sourceTree = "<group>"; };
+		D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = IORegistryBatteryProvider.swift; sourceTree = "<group>"; };
+		DE6ACA432A4FB57780D76A5A /* BatteryCheck.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = BatteryCheck.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		ED1D2BACEF87B206A42EF306 /* BatteryProviding.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = BatteryProviding.swift; sourceTree = "<group>"; };
+		F1F3EF14C409504723978716 /* RefreshScheduler.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = RefreshScheduler.swift; sourceTree = "<group>"; };
+		FAF81F007BDFD77837F131DD /* MenuBarLabelView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MenuBarLabelView.swift; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXGroup section */
+		100C0B71889CA741E3CEDA72 = {
+			isa = PBXGroup;
+			children = (
+				6A9CC921F3F899BF23BAC586 /* Sources */,
+				FE06B67C75AA7B6F88DBDFC9 /* Tests */,
+				4A5C705A71E45CD5319C33B0 /* Products */,
+			);
+			sourceTree = "<group>";
+		};
+		30B7B3166CA190DD56496CAE /* BatteryCheckCore */ = {
+			isa = PBXGroup;
+			children = (
+				B6A71F963352C093C0B15894 /* BatteryDevice.swift */,
+				ED1D2BACEF87B206A42EF306 /* BatteryProviding.swift */,
+				D53A607232484F09938F7734 /* IORegistryBatteryProvider.swift */,
+				F1F3EF14C409504723978716 /* RefreshScheduler.swift */,
+			);
+			path = BatteryCheckCore;
+			sourceTree = "<group>";
+		};
+		4A5C705A71E45CD5319C33B0 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				DE6ACA432A4FB57780D76A5A /* BatteryCheck.app */,
+				265353B0BA53D416E1687658 /* BatteryCheckCoreTests.xctest */,
+				8A68E73F57CEC43BFDA103E1 /* BatteryCheckIntegrationTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		63A13BD15CEAB391A955A33F /* BatteryCheckCoreTests */ = {
+			isa = PBXGroup;
+			children = (
+				B6D21A05AD7A052479D2CA2C /* RefreshSchedulerTests.swift */,
+			);
+			path = BatteryCheckCoreTests;
+			sourceTree = "<group>";
+		};
+		6A9CC921F3F899BF23BAC586 /* Sources */ = {
+			isa = PBXGroup;
+			children = (
+				761C6BEC1AB2EB459D352E02 /* BatteryCheckApp */,
+				30B7B3166CA190DD56496CAE /* BatteryCheckCore */,
+			);
+			path = Sources;
+			sourceTree = "<group>";
+		};
+		761C6BEC1AB2EB459D352E02 /* BatteryCheckApp */ = {
+			isa = PBXGroup;
+			children = (
+				0B128C10B5A3EC176CE75327 /* AppModel.swift */,
+				11B07E5C850878BD8132BC94 /* BatteryCheckApp.swift */,
+				FAF81F007BDFD77837F131DD /* MenuBarLabelView.swift */,
+				B98528F23BB46E1094D27420 /* MenuContentView.swift */,
+				BD751BA42FE71EE35E81A09B /* SettingsView.swift */,
+			);
+			path = BatteryCheckApp;
+			sourceTree = "<group>";
+		};
+		FBC917A856D44D531C203531 /* BatteryCheckIntegrationTests */ = {
+			isa = PBXGroup;
+			children = (
+				70BCDA54B66901A748D70A0A /* AppModelIntegrationTests.swift */,
+			);
+			path = BatteryCheckIntegrationTests;
+			sourceTree = "<group>";
+		};
+		FE06B67C75AA7B6F88DBDFC9 /* Tests */ = {
+			isa = PBXGroup;
+			children = (
+				63A13BD15CEAB391A955A33F /* BatteryCheckCoreTests */,
+				FBC917A856D44D531C203531 /* BatteryCheckIntegrationTests */,
+			);
+			path = Tests;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXNativeTarget section */
+		6635722C9CB0EB6C6B3BF9C6 /* BatteryCheckIntegrationTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 8722A616CC32B55C7283D4B4 /* Build configuration list for PBXNativeTarget "BatteryCheckIntegrationTests" */;
+			buildPhases = (
+				D195504C66755C18163B7969 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				4287817BFF5823AC1E5F268A /* PBXTargetDependency */,
+			);
+			name = BatteryCheckIntegrationTests;
+			packageProductDependencies = (
+			);
+			productName = BatteryCheckIntegrationTests;
+			productReference = 8A68E73F57CEC43BFDA103E1 /* BatteryCheckIntegrationTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		C4EF12684259BF5C45B429F2 /* BatteryCheck */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 780EE361817C19DC36BAB9D4 /* Build configuration list for PBXNativeTarget "BatteryCheck" */;
+			buildPhases = (
+				790D2B238EC590698040A893 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = BatteryCheck;
+			packageProductDependencies = (
+			);
+			productName = BatteryCheck;
+			productReference = DE6ACA432A4FB57780D76A5A /* BatteryCheck.app */;
+			productType = "com.apple.product-type.application";
+		};
+		F4B89E89A9C57687722DC067 /* BatteryCheckCoreTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 92D16F322FCC7396EC9F24B5 /* Build configuration list for PBXNativeTarget "BatteryCheckCoreTests" */;
+			buildPhases = (
+				F03930827A64666AD3995789 /* Sources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				B6C73EB14C4F1D6BCDDD2D9F /* PBXTargetDependency */,
+			);
+			name = BatteryCheckCoreTests;
+			packageProductDependencies = (
+			);
+			productName = BatteryCheckCoreTests;
+			productReference = 265353B0BA53D416E1687658 /* BatteryCheckCoreTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		AED629FFFC8948286A4E6112 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				BuildIndependentTargetsInParallel = YES;
+				LastUpgradeCheck = 1430;
+				TargetAttributes = {
+				};
+			};
+			buildConfigurationList = BB752B9C8EDE8E5ACD290D70 /* Build configuration list for PBXProject "BatteryCheck" */;
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				Base,
+				en,
+			);
+			mainGroup = 100C0B71889CA741E3CEDA72;
+			minimizedProjectReferenceProxies = 1;
+			preferredProjectObjectVersion = 77;
+			productRefGroup = 4A5C705A71E45CD5319C33B0 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				C4EF12684259BF5C45B429F2 /* BatteryCheck */,
+				F4B89E89A9C57687722DC067 /* BatteryCheckCoreTests */,
+				6635722C9CB0EB6C6B3BF9C6 /* BatteryCheckIntegrationTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXSourcesBuildPhase section */
+		790D2B238EC590698040A893 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				6C55DF3063053C50DF3A18DC /* AppModel.swift in Sources */,
+				C3995DAEB0A675920D3EDC79 /* BatteryCheckApp.swift in Sources */,
+				F852F3F1F52DA83BFCE26EC0 /* BatteryDevice.swift in Sources */,
+				3116458456484754CE334858 /* BatteryProviding.swift in Sources */,
+				9811EA702EF8685F84224321 /* IORegistryBatteryProvider.swift in Sources */,
+				5C4777B4123D0DBF66B940A0 /* MenuBarLabelView.swift in Sources */,
+				1C1C04D379D3ACB61C93CA55 /* MenuContentView.swift in Sources */,
+				7E4CFD2923129AB079B07027 /* RefreshScheduler.swift in Sources */,
+				6CEA3E818B772F8E670112F0 /* SettingsView.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D195504C66755C18163B7969 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				FF9CEAC80EE5A0B0A2FBD687 /* AppModelIntegrationTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		F03930827A64666AD3995789 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				BE09CE4AA3FD0AF2FC14E9CF /* RefreshSchedulerTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		4287817BFF5823AC1E5F268A /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4EF12684259BF5C45B429F2 /* BatteryCheck */;
+			targetProxy = D613005000C5809B45F788AE /* PBXContainerItemProxy */;
+		};
+		B6C73EB14C4F1D6BCDDD2D9F /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = C4EF12684259BF5C45B429F2 /* BatteryCheck */;
+			targetProxy = 884C9EA2A6551B14769EC778 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		5310C864EF599E575390FBE5 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				MTL_FAST_MATH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		73771E706DFF340DAB45B52B /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/BatteryCheck.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "讀取已配對藍牙鍵盤與滑鼠的電量。";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "讀取已配對藍牙鍵盤與滑鼠的電量。";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check";
+				PRODUCT_NAME = BatteryCheck;
+				SDKROOT = macosx;
+			};
+			name = Release;
+		};
+		73D965F6D0E6F88F25E821F5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CODE_SIGN_ENTITLEMENTS = Resources/BatteryCheck.entitlements;
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_LSUIElement = YES;
+				INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription = "讀取已配對藍牙鍵盤與滑鼠的電量。";
+				INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription = "讀取已配對藍牙鍵盤與滑鼠的電量。";
+				LD_RUNPATH_SEARCH_PATHS = "@executable_path/../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check";
+				PRODUCT_NAME = BatteryCheck;
+				SDKROOT = macosx;
+			};
+			name = Debug;
+		};
+		7BF4AAF6A44F2F3012B65842 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check.integration-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryCheck.app/Contents/MacOS/BatteryCheck";
+			};
+			name = Release;
+		};
+		B075E7B8DBDF9E1B3E4907A0 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check.tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryCheck.app/Contents/MacOS/BatteryCheck";
+			};
+			name = Release;
+		};
+		B6F18DD49361546D012203D7 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_QUOTED_INCLUDE_IN_FRAMEWORK_HEADER = YES;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"$(inherited)",
+					"DEBUG=1",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				MACOSX_DEPLOYMENT_TARGET = 14.0;
+				MTL_ENABLE_DEBUG_INFO = INCLUDE_SOURCE;
+				MTL_FAST_MATH = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SDKROOT = macosx;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		D982F4570EB9CA70454D4959 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check.integration-tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryCheck.app/Contents/MacOS/BatteryCheck";
+			};
+			name = Debug;
+		};
+		E5BA1411DA84E99CC484F7C5 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				COMBINE_HIDPI_IMAGES = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@loader_path/../Frameworks",
+				);
+				PRODUCT_BUNDLE_IDENTIFIER = "com.pjr13.battery-check.tests";
+				SDKROOT = macosx;
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/BatteryCheck.app/Contents/MacOS/BatteryCheck";
+			};
+			name = Debug;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		780EE361817C19DC36BAB9D4 /* Build configuration list for PBXNativeTarget "BatteryCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				73D965F6D0E6F88F25E821F5 /* Debug */,
+				73771E706DFF340DAB45B52B /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		8722A616CC32B55C7283D4B4 /* Build configuration list for PBXNativeTarget "BatteryCheckIntegrationTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D982F4570EB9CA70454D4959 /* Debug */,
+				7BF4AAF6A44F2F3012B65842 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		92D16F322FCC7396EC9F24B5 /* Build configuration list for PBXNativeTarget "BatteryCheckCoreTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				E5BA1411DA84E99CC484F7C5 /* Debug */,
+				B075E7B8DBDF9E1B3E4907A0 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+		BB752B9C8EDE8E5ACD290D70 /* Build configuration list for PBXProject "BatteryCheck" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				B6F18DD49361546D012203D7 /* Debug */,
+				5310C864EF599E575390FBE5 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Debug;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = AED629FFFC8948286A4E6112 /* Project object */;
+}

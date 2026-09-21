@@ -1,0 +1,62 @@
+name: BatteryCheck
+options:
+  bundleIdPrefix: com.pjr13
+  deploymentTarget:
+    macOS: "14.0"
+  createIntermediateGroups: true
+settings:
+  base:
+    SWIFT_VERSION: "5.0"
+    MACOSX_DEPLOYMENT_TARGET: "14.0"
+targets:
+  BatteryCheck:
+    type: application
+    platform: macOS
+    sources:
+      - path: Sources/BatteryCheckApp
+      - path: Sources/BatteryCheckCore
+    settings:
+      base:
+        PRODUCT_BUNDLE_IDENTIFIER: com.pjr13.battery-check
+        INFOPLIST_KEY_LSUIElement: YES
+        INFOPLIST_KEY_NSBluetoothAlwaysUsageDescription: "讀取已配對藍牙鍵盤與滑鼠的電量。"
+        INFOPLIST_KEY_NSBluetoothPeripheralUsageDescription: "讀取已配對藍牙鍵盤與滑鼠的電量。"
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_NAME: BatteryCheck
+        LD_RUNPATH_SEARCH_PATHS: "@executable_path/../Frameworks"
+        CODE_SIGN_ENTITLEMENTS: Resources/BatteryCheck.entitlements
+    entitlements:
+      path: Resources/BatteryCheck.entitlements
+  BatteryCheckCoreTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/BatteryCheckCoreTests
+    dependencies:
+      - target: BatteryCheck
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.pjr13.battery-check.tests
+  BatteryCheckIntegrationTests:
+    type: bundle.unit-test
+    platform: macOS
+    sources:
+      - path: Tests/BatteryCheckIntegrationTests
+    dependencies:
+      - target: BatteryCheck
+    settings:
+      base:
+        GENERATE_INFOPLIST_FILE: YES
+        PRODUCT_BUNDLE_IDENTIFIER: com.pjr13.battery-check.integration-tests
+schemes:
+  BatteryCheck:
+    build:
+      targets:
+        BatteryCheck: all
+        BatteryCheckCoreTests: [test]
+        BatteryCheckIntegrationTests: [test]
+    test:
+      targets:
+        - BatteryCheckCoreTests
+        - BatteryCheckIntegrationTests
